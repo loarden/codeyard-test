@@ -1,6 +1,5 @@
 import { Grid, Paper, ThemeProvider, Typography } from "@mui/material";
 import { openSans } from "../assets/theme";
-import { ThemeContext } from "@emotion/react";
 import SignUpForm from "./SignUpForm";
 
 function SignUp() {
@@ -8,7 +7,6 @@ function SignUp() {
     <Grid
       item
       sm={6}
-      component={Paper}
       sx={{
         backgroundColor: "#F7F7F7",
         display: "flex",
@@ -17,7 +15,7 @@ function SignUp() {
       }}
     >
       <Paper
-        elevation={3}
+        elevation={2}
         sx={{
           width: "380px",
           borderRadius: "12px",
@@ -26,10 +24,16 @@ function SignUp() {
         }}
       >
         <ThemeProvider theme={openSans}>
-          <Typography variant="h1" sx={{ color: "#757575", fontSize: "30px", lineHeight: '30px'}}>
+          <Typography
+            variant="h1"
+            sx={{ color: "#757575", fontSize: "30px", lineHeight: "30px" }}
+          >
             Welcome to Acme.
           </Typography>
-          <Typography variant="h6" sx={{ color: "#A1A1A1", fontSize: '14px', marginTop: '10px'}}>
+          <Typography
+            variant="h6"
+            sx={{ color: "#A1A1A1", fontSize: "14px", marginTop: "12px" }}
+          >
             Create your account by filling the form bellow.
           </Typography>
           <SignUpForm />
