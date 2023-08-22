@@ -9,6 +9,6 @@ export const openSans = createTheme({
 
 export const appleSysUI = createTheme({
   typography: {
-    fontFamily: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif']. join(','),
+    fontFamily: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'].join(','),
   }
 })
