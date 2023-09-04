@@ -26,4 +26,4 @@ function FormControlCheckbox ({ onChange, isChecked }) {
   );
 }
 
-export default FormControlCheckbox;
+export default memo(FormControlCheckbox);

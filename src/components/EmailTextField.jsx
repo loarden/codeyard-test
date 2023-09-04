@@ -26,4 +26,4 @@ function EmailTextField ({ onChange }) {
   )
 }
 
-export default EmailTextField
+export default memo(EmailTextField)

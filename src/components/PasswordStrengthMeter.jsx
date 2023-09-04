@@ -5,7 +5,7 @@ const styles = {
   box: {
     width: "4px",
     height: "4px",
-    backgroundColor: "#757575",
+    backgroundColor: "#E0E0E0",
     borderRadius: "50%",
   },
 };

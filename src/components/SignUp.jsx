@@ -11,6 +11,8 @@ import SignUpForm from "./SignUpForm";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 function SignUp() {
+  console.log('sign up render...')
+
   return (
     <Grid
       item
