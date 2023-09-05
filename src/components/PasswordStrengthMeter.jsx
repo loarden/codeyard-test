@@ -1,33 +1,55 @@
 import { Box } from "@mui/material";
-import { useEffect } from "react";
+import zxcvbn from "zxcvbn";
+import { memo, useMemo } from "react";
 
 const styles = {
-  box: {
-    width: "4px",
-    height: "4px",
-    backgroundColor: "#E0E0E0",
-    borderRadius: "50%",
-  },
+  width: "4px",
+  height: "4px",
+  borderRadius: "50%",
 };
 
-function PasswordStrengthMeter({ strength }) {
+function PasswordStrengthMeter({ password }) {
+  const testResult = useMemo(() => {
+    return zxcvbn(password);
+  }, [password]);
 
   return (
-    <>
-      <Box 
-        sx={styles.box}
-      ></Box>
-      <Box
-        sx={styles.box}
-      ></Box>
-      <Box
-        sx={styles.box}
-      ></Box>
-      <Box
-        sx={styles.box}
-      ></Box>
-    </>
+    <Box
+      sx={{
+        position: "absolute",
+        right: "2px",
+        bottom: "8px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "4px",
+      }}
+    >
+      <div
+        style={{
+          ...styles,
+          ...{ backgroundColor: testResult.score > 3 ? "#0A96A3" : "#E0E0E0" },
+        }}
+      ></div>
+      <div
+        style={{
+          ...styles,
+          ...{ backgroundColor: testResult.score > 2 ? "#4A90E2" : "#E0E0E0" },
+        }}
+      ></div>
+      <div
+        style={{
+          ...styles,
+          ...{ backgroundColor: testResult.score > 1 ? "#F9C466" : "#E0E0E0" },
+        }}
+      ></div>
+      <div
+        style={{
+          ...styles,
+          ...{ backgroundColor: testResult.score > 0 ? "#CD4146" : "#E0E0E0" },
+        }}
+      ></div>
+    </Box>
   );
 }
 
-export default PasswordStrengthMeter;
+export default memo(PasswordStrengthMeter);
