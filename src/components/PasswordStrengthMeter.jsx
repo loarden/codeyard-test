@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
-import zxcvbn from "zxcvbn";
-import { memo, useMemo } from "react";
+import { memo } from "react";
 
 const styles = {
   width: "4px",
@@ -8,11 +7,7 @@ const styles = {
   borderRadius: "50%",
 };
 
-function PasswordStrengthMeter({ password }) {
-  const testResult = useMemo(() => {
-    return zxcvbn(password);
-  }, [password]);
-
+function PasswordStrengthMeter({ strength }) {
   return (
     <Box
       sx={{
@@ -27,25 +22,25 @@ function PasswordStrengthMeter({ password }) {
       <div
         style={{
           ...styles,
-          ...{ backgroundColor: testResult.score > 3 ? "#0A96A3" : "#E0E0E0" },
+          ...{ backgroundColor: strength > 3 ? "#0A96A3" : "#E0E0E0" },
         }}
       ></div>
       <div
         style={{
           ...styles,
-          ...{ backgroundColor: testResult.score > 2 ? "#4A90E2" : "#E0E0E0" },
+          ...{ backgroundColor: strength > 2 ? "#4A90E2" : "#E0E0E0" },
         }}
       ></div>
       <div
         style={{
           ...styles,
-          ...{ backgroundColor: testResult.score > 1 ? "#F9C466" : "#E0E0E0" },
+          ...{ backgroundColor: strength > 1 ? "#F9C466" : "#E0E0E0" },
         }}
       ></div>
       <div
         style={{
           ...styles,
-          ...{ backgroundColor: testResult.score > 0 ? "#CD4146" : "#E0E0E0" },
+          ...{ backgroundColor: strength > 0 ? "#CD4146" : "#E0E0E0" },
         }}
       ></div>
     </Box>

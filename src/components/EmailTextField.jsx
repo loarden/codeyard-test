@@ -7,8 +7,6 @@ function EmailTextField ({ onChange }) {
     onChange(e)
   }
 
-  console.log('email render...')
-
   return (
     <StyledTextField
     onChange={handleOnChange}

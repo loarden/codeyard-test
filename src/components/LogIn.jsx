@@ -21,7 +21,7 @@ function LogIn() {
         },
       },
     });
-    console.log(res);
+    console.log(res.data.result);
   };
 
   return (

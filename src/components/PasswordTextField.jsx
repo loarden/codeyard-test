@@ -1,18 +1,25 @@
 import { Box, IconButton } from "@mui/material";
 import { StyledTextField } from "../styled-components/StyledTextField";
 import PasswordStrengthMeter from "./PasswordStrengthMeter";
-import { useState, useCallback, useEffect, memo, useRef } from "react";
+import { useState, memo } from "react";
 import FaEye from "../images/fa-eye@2x.png";
+import zxcvbn from "zxcvbn";
 import FaEyeSlash from "../images/fa-eye-slash@2x.png";
 
 function PasswordTextField({ onChange }) {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
 
+  const testResult = zxcvbn(password);
+
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
 
+  const handleChange = (e) => {
+    onChange(e)
+    setPassword(e.target.value);
+  };
 
   return (
     <Box
@@ -21,7 +28,7 @@ function PasswordTextField({ onChange }) {
       }}
     >
       <StyledTextField
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={handleChange}
         name="password"
         variant="standard"
         label="Password"
@@ -46,7 +53,7 @@ function PasswordTextField({ onChange }) {
       >
         <img src={!showPassword ? FaEye : FaEyeSlash} width={22} height={16} />
       </IconButton>
-        <PasswordStrengthMeter password={password} />
+      <PasswordStrengthMeter strength={testResult.score} />
     </Box>
   );
 }
