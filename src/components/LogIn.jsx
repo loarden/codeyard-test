@@ -1,8 +1,10 @@
-import { Button, Grid } from "@mui/material";
+import { Box, Button, Grid, ThemeProvider, Typography } from "@mui/material";
 import { useFormContext } from "../hooks/useFormContext";
 import axios from "axios";
-import { useCallback } from "react";
+import AcmeLogo from "../images/acme.png";
+import { useCallback, memo } from "react";
 import { StyledLgInButton } from "../styled-components/StyledLogInButton";
+import { appleSysUI } from "../assets/theme";
 
 function LogIn() {
   const { form } = useFormContext();
@@ -27,8 +29,13 @@ function LogIn() {
   return (
     <Grid
       item
-      sm={6}
+      md={6}
+      sm={12}
+      xs={12}
       sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         backgroundImage:
           "url(https://images.pexels.com/photos/1838017/pexels-photo-1838017.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
         backgroundRepeat: "no-repeat",
@@ -39,16 +46,41 @@ function LogIn() {
           content: '" "',
           position: "absolute",
           width: "100%",
-          height: "100%",
+          height: "100vh",
           backdropFilter: "blur(10px)",
         },
       }}
     >
-      <StyledLgInButton variant="outlined" onClick={loginHandler}>
-        Log in
-      </StyledLgInButton>
+      <Box
+        sx={{
+          position: "relative",
+          maxWidth: "380px",
+          width: '100%',
+          bottom: '64px'
+        }}
+      >
+        <img src={AcmeLogo} alt={AcmeLogo} />
+        <Typography
+          variant="h2"
+          sx={{ color: "#FFFFFF", fontSize: "30px", lineHeight: "44px", marginTop: '30px' }}
+        >
+          Do you already have an account?
+        </Typography>
+        <ThemeProvider theme={appleSysUI}>
+        <Typography
+          variant="h4"
+          sx={{ color: "#FFFFFF", fontSize: "14px", lineHeight: "30px", marginTop: '14px', marginBottom: '14px' }}
+        >
+          That's awesome! You can login by clicking on the button below. To skip
+          this next time, you can ask us to remember your login credentials.
+        </Typography>
+        </ThemeProvider>
+        <StyledLgInButton variant="outlined" onClick={loginHandler}>
+          Log in
+        </StyledLgInButton>
+      </Box>
     </Grid>
   );
 }
 
-export default LogIn;
+export default memo(LogIn);

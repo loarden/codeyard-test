@@ -5,7 +5,7 @@ import {
 import { appleSysUI, openSans } from "../assets/theme";
 import { StyledSignUpButton } from "../styled-components/StyledSignUpButton";
 import FormControlCheckbox from "./FormControlCheckbox";
-import { useCallback, useEffect } from "react";
+import { useCallback, memo } from "react";
 import { useFormContext } from "../hooks/useFormContext";
 import PasswordTextField from "./PasswordTextField";
 import EmailTextField from "./EmailTextField";
@@ -44,4 +44,4 @@ function SignUpForm() {
   );
 }
 
-export default SignUpForm;
+export default memo(SignUpForm);

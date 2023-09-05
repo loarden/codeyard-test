@@ -14,20 +14,24 @@ function SignUp() {
   return (
     <Grid
       item
-      sm={6}
+      md={6}
+      sm={12}
+      xs={12}
       sx={{
         backgroundColor: "#F7F7F7",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        height: '100vh'
       }}
     >
       <Paper
         elevation={2}
         sx={{
           position: "relative",
-          width: "380px",
+          maxWidth: "380px",
+          width: '100%',
           borderRadius: "12px",
           padding: "30px",
           boxSizing: "border-box",
