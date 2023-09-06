@@ -1,7 +1,7 @@
 import { styled, Button } from "@mui/material";
 
 export const StyledLgInButton = styled(Button)({
-  padding: "6px 28px",
+  padding: "4px 28px",
   color: "#FFFFFF",
   borderColor: "#FFFFFF",
   borderWidth: "2px",
