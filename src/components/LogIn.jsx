@@ -1,11 +1,11 @@
 import { StyledLgInButton } from "../styled-components/StyledLogInButton";
-import { Grid, ThemeProvider, Typography } from "@mui/material";
-import { StyledBox } from "../styled-components/StyledBox";
+import { ThemeProvider, Typography } from "@mui/material";
 import { useFormContext } from "../hooks/useFormContext";
 import { appleSysUI } from "../assets/theme";
 import AcmeLogo from "../images/acme.png";
 import axios from "axios";
 import { StyledLoginSection } from "../styled-components/StyledLoginSection";
+import { StyledLogInBox } from "../styled-components/StyledLoginBox";
 
 function LogIn() {
   const { form } = useFormContext();
@@ -33,14 +33,7 @@ function LogIn() {
       md={6} 
       sm={12} 
       xs={12}>
-      <StyledBox
-        sx={{
-          position: "relative",
-          maxWidth: "380px",
-          width: "100%",
-          bottom: "64px",
-        }}
-      >
+      <StyledLogInBox>
         <img src={AcmeLogo} alt={AcmeLogo} />
         <Typography
           variant="h2"
@@ -72,7 +65,7 @@ function LogIn() {
         <StyledLgInButton variant="outlined" onClick={handleLogIn}>
           Log in
         </StyledLgInButton>
-      </StyledBox>
+      </StyledLogInBox>
     </StyledLoginSection>
   );
 }

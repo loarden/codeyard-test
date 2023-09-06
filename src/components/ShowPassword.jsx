@@ -6,7 +6,7 @@ import { memo } from "react";
 function ShowPassword({ onClick, showPassword }) {
   return (
     <IconButton
-      onClick={(e) => onClick(e)}
+      onClick={() => onClick()}
       sx={{
         position: "absolute",
         bottom: "4px",

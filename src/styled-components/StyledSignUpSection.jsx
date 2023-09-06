@@ -7,5 +7,5 @@ export const StyledSignUpSection = styled(Grid)({
   alignItems: "center",
   flexDirection: "column",
   minHeight: "100vh",
-  height: "100%",
+  height: "fit-content",
 });

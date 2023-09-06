@@ -1,4 +1,4 @@
-import { styled, Grid } from '@mui/material'
+import { styled, Grid } from "@mui/material";
 import backgroundImage from "../images/pexels-vlad-chețan-1838017.jpg";
 
 export const StyledLoginSection = styled(Grid)({
@@ -12,12 +12,13 @@ export const StyledLoginSection = styled(Grid)({
   position: "relative",
   width: "100%",
   minHeight: "100vh",
-  height: "100%",
+  height: "auto",
   "&::before": {
     content: '" "',
     position: "absolute",
     width: "100%",
     minHeight: "100vh",
+    height: "auto",
     backdropFilter: "blur(10px)",
   },
-})
+});

@@ -1,8 +1,8 @@
 import { FormControl, ThemeProvider } from "@mui/material";
-import { appleSysUI, openSans } from "../assets/theme";
+import { appleSysUI } from "../assets/theme";
 import { StyledSignUpButton } from "../styled-components/StyledSignUpButton";
 import FormControlCheckbox from "./FormControlCheckbox";
-import { useCallback, memo } from "react";
+import { useCallback } from "react";
 import { useFormContext } from "../hooks/useFormContext";
 import PasswordTextField from "./PasswordTextField";
 import EmailTextField from "./EmailTextField";
@@ -10,15 +10,12 @@ import EmailTextField from "./EmailTextField";
 function SignUpForm() {
   const { form, setForm } = useFormContext();
 
-  const handleFormChange = useCallback(
-    (e) => {
+  const handleFormChange = useCallback((e) => {
       setForm((prev) => ({
         ...prev,
         [e.target.name]: e.target.value,
       }));
-    },
-    [setForm]
-  );
+    }, [setForm]);
 
   const handleCheck = useCallback(() => {
     setForm((prev) => ({
@@ -43,4 +40,4 @@ function SignUpForm() {
   );
 }
 
-export default memo(SignUpForm);
+export default SignUpForm;

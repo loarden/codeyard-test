@@ -4,5 +4,5 @@ export const StyledSignUpButton = styled(Button)({
   justifySelf: "end",
   textTransform: "none",
   backgroundColor: "#4A90E2",
-  padding: '8px 26px'
+  padding: "8px 26px",
 });
