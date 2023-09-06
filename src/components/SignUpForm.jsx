@@ -1,7 +1,4 @@
-import {
-  FormControl,
-  ThemeProvider,
-} from "@mui/material";
+import { FormControl, ThemeProvider } from "@mui/material";
 import { appleSysUI, openSans } from "../assets/theme";
 import { StyledSignUpButton } from "../styled-components/StyledSignUpButton";
 import FormControlCheckbox from "./FormControlCheckbox";
@@ -13,7 +10,8 @@ import EmailTextField from "./EmailTextField";
 function SignUpForm() {
   const { form, setForm } = useFormContext();
 
-  const handleFormChange = useCallback((e) => {
+  const handleFormChange = useCallback(
+    (e) => {
       setForm((prev) => ({
         ...prev,
         [e.target.name]: e.target.value,
@@ -24,23 +22,24 @@ function SignUpForm() {
 
   const handleCheck = useCallback(() => {
     setForm((prev) => ({
-      ...prev, remember: !prev.remember
-    }))
-  },[setForm])
+      ...prev,
+      remember: !prev.remember,
+    }));
+  }, [setForm]);
 
   return (
-      <FormControl
-        sx={{ width: "100%", marginTop: "30px", display: "grid", gap: "20px" }}
-      >
+    <FormControl
+      sx={{ width: "100%", marginTop: "30px", display: "grid", gap: "20px" }}
+    >
+      <ThemeProvider theme={appleSysUI}>
         <EmailTextField onChange={handleFormChange} />
         <PasswordTextField onChange={handleFormChange} />
-        <FormControlCheckbox onChange={handleCheck} isChecked={form.remember}/>
-        <ThemeProvider theme={openSans}>
-          <StyledSignUpButton variant="contained" disableElevation>
-            Sign up
-          </StyledSignUpButton>
-        </ThemeProvider>
-      </FormControl>
+        <FormControlCheckbox onChange={handleCheck} isChecked={form.remember} />
+      </ThemeProvider>
+      <StyledSignUpButton variant="contained" disableElevation>
+        Sign up
+      </StyledSignUpButton>
+    </FormControl>
   );
 }
 

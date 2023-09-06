@@ -10,35 +10,20 @@ import { appleSysUI } from "../assets/theme";
 import SignUpForm from "./SignUpForm";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { StyledBox } from "../styled-components/StyledBox";
-import { Height } from "@mui/icons-material";
+import { memo } from "react";
+import { StyledSignUpSection } from "../styled-components/StyledSignUpSection";
+import { StyledPaper } from "../styled-components/StyledPaper";
 
 function SignUp() {
   return (
-    <Grid
+    <StyledSignUpSection
       item
       md={6}
       sm={12}
       xs={12}
-      sx={{
-        backgroundColor: "#F7F7F7",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        minHeight: '100vh',
-        height: '100%'
-      }}
     >
-      <Paper
+      <StyledPaper
         elevation={2}
-        sx={{
-          position: "relative",
-          maxWidth: "380px",
-          width: '100%',
-          borderRadius: "12px",
-          padding: "30px",
-          boxSizing: "border-box",
-        }}
       >
         <Typography
           variant="h1"
@@ -52,16 +37,14 @@ function SignUp() {
         >
           Create your account by filling the form bellow.
         </Typography>
-        <ThemeProvider theme={appleSysUI}>
-          <SignUpForm />
-        </ThemeProvider>
+        <SignUpForm />
         <StyledBox
           sx={{
             position: "absolute",
             bottom: "-50px",
             left: "0px",
             display: "flex",
-            gap: '5px',
+            gap: "5px",
             alignItems: "center",
           }}
         >
@@ -91,17 +74,21 @@ function SignUp() {
           >
             Privacy
           </Typography>
-          <IconButton sx={{
-            padding: 0
-          }}>
-            <MoreHorizIcon sx={{
-              color: '#A1A1A1',
-            }}/>
+          <IconButton
+            sx={{
+              padding: 0,
+            }}
+          >
+            <MoreHorizIcon
+              sx={{
+                color: "#A1A1A1",
+              }}
+            />
           </IconButton>
         </StyledBox>
-      </Paper>
-    </Grid>
+      </StyledPaper>
+    </StyledSignUpSection>
   );
 }
 
-export default SignUp;
+export default memo(SignUp);
