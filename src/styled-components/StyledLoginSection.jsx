@@ -17,7 +17,7 @@ export const StyledLoginSection = styled(Grid)({
     content: '" "',
     position: "absolute",
     width: "100%",
-    minHeight: "100vh",
+    minHeight: "100%",
     height: "auto",
     backdropFilter: "blur(10px)",
   },

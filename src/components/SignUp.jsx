@@ -16,7 +16,7 @@ function SignUp() {
         </Typography>
         <Typography
           variant="h6"
-          sx={{ color: "#A1A1A1", fontSize: "14px", marginTop: "12px" }}
+          sx={{ color: "#A1A1A1", fontSize: "14px", marginTop: "12px", lineHeight: '19px' }}
         >
           Create your account by filling the form bellow.
         </Typography>

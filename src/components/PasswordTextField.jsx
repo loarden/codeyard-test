@@ -37,6 +37,7 @@ function PasswordTextField({ onChange }) {
           style: {
             color: "#757575",
             fontSize: "14px",
+            lineHeight: "17px",
           },
         }}
       />

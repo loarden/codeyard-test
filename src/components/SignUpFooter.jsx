@@ -20,6 +20,7 @@ function SignUpFooter() {
           sx={{
             fontSize: "12px",
             color: "#A1A1A1",
+            lineHeight: "15px",
           }}
         >
           © 2015 Acme, Inc.
@@ -29,6 +30,7 @@ function SignUpFooter() {
         sx={{
           fontSize: "12px",
           color: "#A1A1A1",
+          lineHeight: "17px",
         }}
       >
         Terms
@@ -37,6 +39,7 @@ function SignUpFooter() {
         sx={{
           fontSize: "12px",
           color: "#A1A1A1",
+          lineHeight: "17px",
         }}
       >
         Privacy

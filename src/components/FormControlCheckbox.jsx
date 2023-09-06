@@ -2,7 +2,7 @@ import { FormControlLabel, Checkbox, Typography } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle";
 import { memo } from "react";
 
-function FormControlCheckbox ({ onChange, isChecked }) {
+function FormControlCheckbox({ onChange, isChecked }) {
   return (
     <FormControlLabel
       control={
@@ -15,7 +15,9 @@ function FormControlCheckbox ({ onChange, isChecked }) {
         />
       }
       label={
-        <Typography sx={{ color: "#A1A1A1", fontSize: "14px" }}>
+        <Typography
+          sx={{ color: "#A1A1A1", fontSize: "14px", lineHeight: "17px" }}
+        >
           Remember me.
         </Typography>
       }

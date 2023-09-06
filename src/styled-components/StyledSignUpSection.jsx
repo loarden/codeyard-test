@@ -8,4 +8,6 @@ export const StyledSignUpSection = styled(Grid)({
   flexDirection: "column",
   minHeight: "100vh",
   height: "fit-content",
+  paddingTop: '60px',
+  paddingBottom: '60px',
 });
