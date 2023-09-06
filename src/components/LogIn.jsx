@@ -2,9 +2,11 @@ import { Box, Button, Grid, ThemeProvider, Typography } from "@mui/material";
 import { useFormContext } from "../hooks/useFormContext";
 import axios from "axios";
 import AcmeLogo from "../images/acme.png";
+import backgroundImage from '../images/pexels-vlad-chețan-1838017.jpg'
 import { useCallback, memo } from "react";
 import { StyledLgInButton } from "../styled-components/StyledLogInButton";
 import { appleSysUI } from "../assets/theme";
+import { StyledBox } from "../styled-components/StyledBox";
 
 function LogIn() {
   const { form } = useFormContext();
@@ -37,21 +39,24 @@ function LogIn() {
         justifyContent: "center",
         alignItems: "center",
         backgroundImage:
-          "url(https://images.pexels.com/photos/1838017/pexels-photo-1838017.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
+          `url(${backgroundImage})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",
+        width: '100%',
+        minHeight: '100vh',
+        height: '100%',
         "&::before": {
           content: '" "',
           position: "absolute",
           width: "100%",
-          height: "100vh",
+          minHeight: "100vh",
           backdropFilter: "blur(10px)",
         },
       }}
     >
-      <Box
+      <StyledBox
         sx={{
           position: "relative",
           maxWidth: "380px",
@@ -78,7 +83,7 @@ function LogIn() {
         <StyledLgInButton variant="outlined" onClick={loginHandler}>
           Log in
         </StyledLgInButton>
-      </Box>
+      </StyledBox>
     </Grid>
   );
 }

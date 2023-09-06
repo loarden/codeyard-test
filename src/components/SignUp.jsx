@@ -9,6 +9,8 @@ import {
 import { appleSysUI } from "../assets/theme";
 import SignUpForm from "./SignUpForm";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { StyledBox } from "../styled-components/StyledBox";
+import { Height } from "@mui/icons-material";
 
 function SignUp() {
   return (
@@ -23,7 +25,8 @@ function SignUp() {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        height: '100vh'
+        minHeight: '100vh',
+        height: '100%'
       }}
     >
       <Paper
@@ -52,7 +55,7 @@ function SignUp() {
         <ThemeProvider theme={appleSysUI}>
           <SignUpForm />
         </ThemeProvider>
-        <Box
+        <StyledBox
           sx={{
             position: "absolute",
             bottom: "-50px",
@@ -95,7 +98,7 @@ function SignUp() {
               color: '#A1A1A1',
             }}/>
           </IconButton>
-        </Box>
+        </StyledBox>
       </Paper>
     </Grid>
   );
